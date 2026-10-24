@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bom Pastor | Vidro e alumínio sob medida · Curitiba · desde 1992</title>
+<meta name="description" content="Bom Pastor Vidraçaria e Esquadrias. Box, guarda-corpos, coberturas, sacadas, espelhos e esquadrias de alumínio sob medida. Xaxim, Curitiba, desde 1992.">
+<meta name="theme-color" content="#070b16">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070b16; --bg2:#0c1222; --panel:rgba(255,255,255,.06); --stroke:rgba(255,255,255,.12);
+  --text:#eef2f8; --muted:#9aa6bd; --ice:#9fd8ff; --ice2:#5fb4f0; --gold:#e3c27a; --wa:#25d366;
+  --r:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--text);font-family:"Inter Tight",system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+.wrap{width:min(1240px,100% - 40px);margin-inline:auto}
+.it{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;letter-spacing:0}
+.label{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--ice)}
+.label i{width:8px;height:8px;border-radius:50%;background:var(--ice);box-shadow:0 0 12px var(--ice)}
+h1,h2,h3{font-weight:800;letter-spacing:-.035em;line-height:.95}
+h2{font-size:clamp(40px,6.4vw,92px);text-transform:uppercase}
+h2 .it{text-transform:none;font-size:1.06em;color:var(--ice)}
+.lead{color:var(--muted);font-size:clamp(16px,1.5vw,19px);max-width:560px}
+
+/* grão */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* botões */
+.btn{white-space:nowrap;position:relative;display:inline-flex;align-items:center;gap:12px;padding:17px 26px;border-radius:999px;font-weight:600;font-size:15px;border:0;cursor:pointer;overflow:hidden;transition:transform .25s,box-shadow .25s,background .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-ice{background:var(--text);color:var(--bg)}
+.btn-ice:hover{box-shadow:0 10px 40px rgba(159,216,255,.35)}
+.btn-glass{background:var(--panel);border:1px solid var(--stroke);color:var(--text);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.btn-glass:hover{background:rgba(255,255,255,.12)}
+.btn-wa{background:var(--wa);color:#04210f}
+.btn-wa:hover{box-shadow:0 10px 40px rgba(37,211,102,.4)}
+/* brilho que passa no vidro */
+.shine::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);transition:left .7s ease}
+.shine:hover::after{left:130%}
+
+/* intro */
+#intro{position:fixed;inset:0;z-index:300;background:var(--bg);display:grid;place-items:center;transition:transform 1s cubic-bezier(.77,0,.18,1)}
+#intro.go{transform:translateY(-100%)}
+#intro .in{text-align:center}
+#intro b{display:block;font-size:clamp(34px,6vw,72px);font-weight:900;letter-spacing:-.04em}
+#intro span{color:var(--muted);letter-spacing:.3em;text-transform:uppercase;font-size:12px}
+#intro .bar{width:180px;height:1px;background:var(--stroke);margin:18px auto 0;overflow:hidden}
+#intro .bar::after{content:"";display:block;height:100%;width:100%;background:var(--ice);transform:translateX(-100%);animation:load 1s ease forwards}
+@keyframes load{to{transform:none}}
+
+/* header */
+header{position:fixed;top:14px;left:0;right:0;z-index:100;pointer-events:none}
+.nav{pointer-events:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:10px 10px 10px 22px;border-radius:999px;background:rgba(10,15,30,.55);border:1px solid var(--stroke);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.logo{font-weight:900;letter-spacing:-.03em;font-size:19px;display:flex;align-items:center;gap:10px}
+.logo svg{width:26px;height:26px}
+.logo small{font-weight:500;color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+.menu{display:flex;gap:26px;font-size:14px;color:var(--muted)}
+.menu a:hover{color:var(--text)}
+.nav .btn{padding:12px 20px;font-size:14px}
+.burger{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--stroke);background:transparent;cursor:pointer}
+.burger i{display:block;width:18px;height:1.5px;background:var(--text);margin:4px auto}
+
+/* HERO com vidro embaçado */
+.hero{position:relative;height:100svh;min-height:640px;overflow:hidden}
+.hero .layer{position:absolute;inset:0}
+.hero .layer img{width:100%;height:100%;object-fit:cover}
+.hero .sharp img{transform:scale(1.04)}
+.hero .fog{
+  -webkit-mask-image:radial-gradient(circle at var(--x,70%) var(--y,45%),transparent 0,transparent var(--r1,110px),#000 var(--r2,260px));
+  mask-image:radial-gradient(circle at var(--x,70%) var(--y,45%),transparent 0,transparent var(--r1,110px),#000 var(--r2,260px));
+}
+.hero .fog img{filter:blur(22px) saturate(.7) brightness(.55);transform:scale(1.12)}
+.hero .fog::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,11,22,.35),rgba(7,11,22,.55) 60%,var(--bg))}
+.hero-content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:clamp(40px,8vh,90px)}
+.hero h1{font-size:clamp(52px,10.5vw,170px);text-transform:uppercase;letter-spacing:-.05em;line-height:.86}
+.hero h1 .it{text-transform:none;color:var(--ice);font-size:1.02em;display:inline-block}
+.hero h1 .ln{display:block;overflow:hidden}
+.hero h1 .ln span{display:block;transform:translateY(105%);transition:transform 1.1s cubic-bezier(.2,.8,.2,1)}
+.ready .hero h1 .ln span{transform:none}
+.ready .hero h1 .ln:nth-child(2) span{transition-delay:.12s}
+.ready .hero h1 .ln:nth-child(3) span{transition-delay:.24s}
+.hero-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:28px;margin-top:34px}
+.hero-row .lead{color:#c7d0e0}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.hint{position:absolute;z-index:2;top:50%;right:clamp(20px,6vw,90px);transform:translateY(-50%);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#c7d0e0;writing-mode:vertical-rl;opacity:.7}
+.seal{position:absolute;z-index:3;right:clamp(20px,5vw,70px);top:120px;width:120px;height:120px;animation:spin 18s linear infinite}
+.seal text{font:600 10.5px "Inter Tight";letter-spacing:3.2px;fill:#eef2f8;text-transform:uppercase}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* marquee */
+.marquee{border-block:1px solid var(--stroke);overflow:hidden;padding:22px 0;background:var(--bg)}
+.marquee .t{display:flex;gap:46px;width:max-content;animation:mq 38s linear infinite}
+.marquee span{font-size:clamp(22px,3vw,40px);font-weight:800;text-transform:uppercase;letter-spacing:-.02em;display:flex;align-items:center;gap:46px;white-space:nowrap}
+.marquee span::after{content:"";width:22px;height:22px;border:1.5px solid var(--ice);transform:rotate(45deg);border-radius:3px}
+.marquee span:nth-child(even){font-family:"Instrument Serif";font-style:italic;font-weight:400;text-transform:none;color:var(--ice)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+section{padding:clamp(90px,12vw,160px) 0;position:relative}
+
+/* manifesto + números */
+.manifesto p.big{font-size:clamp(28px,3.6vw,52px);font-weight:600;letter-spacing:-.03em;line-height:1.12;max-width:1100px}
+.manifesto p.big .it{color:var(--ice)}
+.manifesto p.big .dim{color:#56627a}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);margin-top:80px;border-top:1px solid var(--stroke)}
+.num{padding:30px 22px 0 0}
+.num b{display:block;font-size:clamp(46px,6vw,84px);font-weight:800;letter-spacing:-.05em;line-height:1}
+.num b sup{font-size:.4em;color:var(--ice);vertical-align:top;margin-left:4px}
+.num > span{color:var(--muted);font-size:14px}
+
+/* serviços bento */
+.sec-top{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:56px}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:280px;gap:14px}
+.tile{position:relative;border-radius:var(--r);overflow:hidden;background:var(--bg2);border:1px solid var(--stroke);cursor:pointer;isolation:isolate}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.8,.2,1),filter .6s;filter:brightness(.62) saturate(.9);z-index:-1}
+.tile:hover img{transform:scale(1.07);filter:brightness(.78)}
+.tile::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(7,11,22,.9));z-index:-1}
+.tile .in{position:absolute;inset:auto 0 0 0;padding:26px}
+.tile .n{position:absolute;top:22px;left:24px;font-size:12px;letter-spacing:.2em;color:var(--ice)}
+.tile .go{position:absolute;top:18px;right:18px;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid var(--stroke);display:grid;place-items:center;backdrop-filter:blur(10px);transition:background .3s,transform .3s}
+.tile:hover .go{background:var(--text);color:var(--bg);transform:rotate(-45deg)}
+.tile h3{font-size:clamp(24px,2.4vw,34px);text-transform:uppercase;margin-bottom:8px}
+.tile p{color:#c2cbdb;font-size:15px;max-width:380px;max-height:0;opacity:0;overflow:hidden;transition:max-height .5s,opacity .5s}
+.tile:hover p,.tile:focus-within p{max-height:120px;opacity:1}
+.t1{grid-column:span 4;grid-row:span 2}.t2{grid-column:span 2;grid-row:span 2}
+.t3{grid-column:span 2}.t4{grid-column:span 2}.t5{grid-column:span 2}
+.tile.glassy{background:linear-gradient(135deg,rgba(159,216,255,.16),rgba(255,255,255,.03));backdrop-filter:blur(10px)}
+.tile.glassy::before{display:none}
+.tile.glassy ul{list-style:none;display:grid;gap:8px;margin-top:10px;color:#c2cbdb;font-size:15px}
+.t6{grid-column:1/-1}
+.t6in{position:relative!important;padding:34px;display:flex;flex-wrap:wrap;gap:24px 40px;justify-content:space-between;align-items:center;height:100%}
+.t6in ul{grid-template-columns:repeat(3,auto);gap:10px 40px}
+.tile.glassy li::before{content:"— ";color:var(--ice)}
+
+/* CONFIGURADOR */
+.config{background:radial-gradient(900px 500px at 80% 20%,rgba(95,180,240,.14),transparent 60%),var(--bg2);border-block:1px solid var(--stroke)}
+.cfg{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,70px);align-items:center}
+.stage{position:relative;padding-top:44px;border-radius:28px;border:1px solid var(--stroke);background:linear-gradient(180deg,#121a30,#0b1122);aspect-ratio:5/5.6;overflow:hidden;display:grid;place-items:center}
+#boxSvg{width:100%;display:grid;place-items:center}
+.stage svg{width:86%;height:auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45))}
+.stage .tag{position:absolute;left:18px;top:18px;padding:8px 14px;border-radius:999px;background:var(--panel);border:1px solid var(--stroke);font-size:13px;backdrop-filter:blur(10px)}
+.stage .tag b{color:var(--ice)}
+.opts h2{font-size:clamp(36px,4.6vw,66px)}
+.grp{margin-top:26px}
+.grp h4{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:12px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pills button{display:flex;align-items:center;gap:10px;padding:11px 16px;border-radius:999px;border:1px solid var(--stroke);background:var(--panel);color:var(--text);cursor:pointer;font-size:14px;font-weight:500;transition:.2s}
+.pills button:hover{border-color:rgba(255,255,255,.35)}
+.pills button.on{background:var(--text);color:var(--bg);border-color:var(--text)}
+.dot{width:16px;height:16px;border-radius:50%;border:1px solid rgba(255,255,255,.3)}
+.cfg-cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.cfg-cta small{color:var(--muted);font-size:13px;max-width:260px}
+
+/* OBRAS */
+.works-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:40px}
+.ctrl{display:flex;gap:10px;align-items:center}
+.ctrl button{width:56px;height:56px;border-radius:50%;border:1px solid var(--stroke);background:transparent;color:var(--text);font-size:20px;cursor:pointer;transition:.2s}
+.ctrl button:hover{background:var(--text);color:var(--bg)}
+.ctrl .count{font-variant-numeric:tabular-nums;color:var(--muted);min-width:70px;text-align:center}
+.reel{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 max(20px,calc((100vw - 1240px)/2));scrollbar-width:none;cursor:grab}
+.reel::-webkit-scrollbar{display:none}
+.reel figure{flex:0 0 clamp(270px,34vw,500px);scroll-snap-align:center;position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;background:var(--bg2)}
+.reel figure:nth-child(3n+2){aspect-ratio:4/4.4;align-self:center}
+.reel img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.reel figure:hover img{transform:scale(1.05)}
+.reel figcaption{position:absolute;left:14px;right:14px;bottom:14px;padding:14px 16px;border-radius:14px;background:rgba(10,15,30,.5);border:1px solid var(--stroke);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);font-size:14px;display:flex;justify-content:space-between;gap:10px}
+.reel figcaption em{font-style:normal;color:var(--ice);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+
+/* HISTÓRIA */
+.story{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(30px,6vw,90px);align-items:center}
+.story-ph{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/4.6}
+.story-ph img{width:100%;height:100%;object-fit:cover;filter:saturate(.85)}
+.story-ph .yr{position:absolute;left:20px;bottom:20px;padding:18px 22px;border-radius:18px;background:rgba(10,15,30,.55);border:1px solid var(--stroke);backdrop-filter:blur(14px)}
+.story-ph .yr b{font-size:52px;font-weight:900;letter-spacing:-.05em;line-height:1;display:block}
+.story-ph .yr span{color:var(--muted);font-size:13px}
+.story h2{font-size:clamp(38px,5vw,74px)}
+.story p{color:var(--muted);font-size:18px;margin-top:22px;max-width:560px}
+.timeline{margin-top:36px;display:grid;gap:0;border-left:1px solid var(--stroke)}
+.timeline div{padding:0 0 22px 24px;position:relative}
+.timeline div::before{content:"";position:absolute;left:-5px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--ice);box-shadow:0 0 14px var(--ice)}
+.timeline b{display:block;font-size:15px}
+.timeline span{color:var(--muted);font-size:15px}
+
+/* AVALIAÇÃO */
+.rate{padding:0 0 clamp(90px,12vw,160px)}
+.rate-card{border-radius:32px;padding:clamp(34px,6vw,70px);background:linear-gradient(135deg,rgba(159,216,255,.14),rgba(255,255,255,.02) 50%),var(--bg2);border:1px solid var(--stroke);display:grid;grid-template-columns:auto 1fr auto;gap:40px;align-items:center;position:relative;overflow:hidden}
+.rate-card::after{content:"";position:absolute;width:380px;height:380px;border-radius:50%;right:-120px;top:-160px;background:radial-gradient(circle,rgba(159,216,255,.25),transparent 70%)}
+.rate-card .big{font-size:clamp(90px,12vw,170px);font-weight:900;letter-spacing:-.06em;line-height:.85}
+.stars{color:var(--gold);font-size:22px;letter-spacing:4px}
+.half{background:linear-gradient(90deg,var(--gold) 50%,rgba(255,255,255,.2) 50%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rate-card h3{font-size:clamp(24px,2.8vw,38px);text-transform:uppercase;margin:10px 0}
+.rate-card p{color:var(--muted)}
+
+/* QUIZ de orçamento */
+.quiz-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,70px);align-items:start}
+.quiz-wrap h2{font-size:clamp(40px,5.6vw,84px)}
+.contacts{margin-top:34px;display:grid;gap:2px}
+.contacts a,.contacts div{display:flex;justify-content:space-between;gap:14px;padding:16px 0;border-bottom:1px solid var(--stroke);font-size:16px}
+.contacts span{color:var(--muted);font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+.contacts a:hover b{color:var(--ice)}
+.quiz{border-radius:28px;border:1px solid var(--stroke);background:var(--panel);backdrop-filter:blur(14px);padding:clamp(24px,4vw,44px);min-height:470px;display:flex;flex-direction:column}
+.q-progress{display:flex;gap:6px;margin-bottom:28px}
+.q-progress i{flex:1;height:3px;border-radius:3px;background:var(--stroke);transition:background .3s}
+.q-progress i.on{background:var(--ice)}
+.q-step{display:none;flex:1;flex-direction:column}
+.q-step.on{display:flex;animation:fade .5s ease}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}}
+.q-step h3{font-size:clamp(24px,2.6vw,34px);letter-spacing:-.03em;margin-bottom:6px}
+.q-step p.s{color:var(--muted);margin-bottom:22px}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.choices button{text-align:left;padding:16px 18px;border-radius:16px;border:1px solid var(--stroke);background:rgba(255,255,255,.03);color:var(--text);font-size:15px;font-weight:500;cursor:pointer;transition:.2s}
+.choices button:hover{border-color:var(--ice);background:rgba(159,216,255,.08)}
+.choices button.on{border-color:var(--ice);background:rgba(159,216,255,.16)}
+.q-step input,.q-step textarea{width:100%;padding:16px 18px;border-radius:14px;border:1px solid var(--stroke);background:rgba(255,255,255,.04);color:var(--text);font:inherit;font-size:16px;margin-bottom:12px}
+.q-step input::placeholder,.q-step textarea::placeholder{color:#6d7890}
+.q-step input:focus,.q-step textarea:focus{outline:none;border-color:var(--ice)}
+.q-nav{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:24px}
+.q-back{background:none;border:0;color:var(--muted);cursor:pointer;font-size:15px}
+.q-back:hover{color:var(--text)}
+.summary{background:rgba(0,0,0,.25);border:1px solid var(--stroke);border-radius:16px;padding:18px;font-size:15px;color:#c7d0e0;white-space:pre-line;margin-bottom:12px}
+
+/* footer */
+footer{border-top:1px solid var(--stroke);padding:60px 0 40px;overflow:hidden}
+.giant{display:block;width:100%;height:auto}
+.giant text{font:900 200px "Inter Tight",sans-serif;letter-spacing:-10px}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-top:40px;color:var(--muted);font-size:14px}
+.foot a.dev{color:var(--text);font-weight:600}
+.proto{margin-left:8px;padding:3px 9px;border-radius:999px;border:1px solid var(--stroke);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+
+.wa-fab{position:fixed;right:20px;bottom:20px;z-index:90;width:62px;height:62px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.45)}
+.wa-fab::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--wa);animation:pulse 2.2s infinite}
+@keyframes pulse{to{transform:scale(1.6);opacity:0}}
+.wa-fab svg{width:30px;height:30px}
+
+.lb{position:fixed;inset:0;z-index:150;background:rgba(5,8,16,.94);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:20px}
+.lb.on{display:flex}
+.lb img{max-height:84vh;max-width:min(1100px,100%);border-radius:14px}
+.lb button{position:absolute;width:54px;height:54px;border-radius:50%;border:1px solid var(--stroke);background:rgba(255,255,255,.06);color:#fff;font-size:20px;cursor:pointer}
+.lb .x{top:20px;right:20px}.lb .p{left:20px}.lb .n{right:20px}
+
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.2,.8,.2,1),transform 1s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:1000px){
+  .bento{grid-template-columns:repeat(2,1fr);grid-auto-rows:260px}
+  .t1,.t2{grid-column:span 2;grid-row:span 1}.t3,.t4,.t5,.t6{grid-column:span 1}
+  .tile p{max-height:none;opacity:1}
+  .cfg,.story,.quiz-wrap{grid-template-columns:1fr}
+  .rate-card{grid-template-columns:1fr;gap:16px}
+  .nums{grid-template-columns:repeat(2,1fr)}
+  .seal{display:none}
+}
+@media (max-width:760px){
+  .menu{position:fixed;top:84px;left:20px;right:20px;flex-direction:column;gap:0;padding:10px 22px;border-radius:24px;background:rgba(10,15,30,.92);border:1px solid var(--stroke);backdrop-filter:blur(18px);opacity:0;pointer-events:none;transform:translateY(-10px);transition:.25s}
+  .menu.open{opacity:1;pointer-events:auto;transform:none}
+  .menu a{padding:14px 0;border-bottom:1px solid var(--stroke);font-size:16px;color:var(--text)}
+  .burger{display:block}
+  .nav .btn{display:none}
+  .logo small{display:none}
+  .hint{display:none}
+  .bento{grid-template-columns:1fr;grid-auto-rows:auto}
+  .tile{min-height:250px}
+  .tile.t6{min-height:0}
+  .t6in{padding:26px!important}
+  .hero-cta{width:100%;flex-direction:column}
+  .t1,.t2,.t3,.t4,.t5,.t6{grid-column:span 1}
+  .choices{grid-template-columns:1fr}
+  .t6in ul{grid-template-columns:1fr 1fr;gap:8px 20px}
+  .reel figure:nth-child(3n+2){aspect-ratio:4/5}
+  .hero-cta .btn{flex:1;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.hero h1 .ln span{transform:none}}
+</style>
+</head>
+<body>
+
+<div id="intro"><div class="in"><b>BOM PASTOR</b><span>Vidraçaria · desde 1992</span><div class="bar"></div></div></div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#topo" class="logo"><svg viewBox="0 0 32 32" fill="none"><rect x="3" y="3" width="26" height="26" rx="6" stroke="#9fd8ff" stroke-width="1.6"/><path d="M16 3v26M3 16h26" stroke="#9fd8ff" stroke-width="1.6"/><path d="M7 12l5-5M20 25l5-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg>BOM PASTOR<small>Vidraçaria · Esquadrias</small></a>
+    <nav class="menu" id="menu">
+      <a href="#servicos">Serviços</a>
+      <a href="#simulador">Monte seu box</a>
+      <a href="#obras">Obras</a>
+      <a href="#historia">História</a>
+      <a href="#orcamento">Contato</a>
+    </nav>
+    <a href="#orcamento" class="btn btn-ice shine">Orçamento grátis</a>
+    <button class="burger" id="burger" aria-label="Menu"><i></i><i></i></button>
+  </div>
+</header>
+
+<main id="topo">
+<!-- HERO -->
+<section class="hero" id="hero" style="padding:0">
+  <div class="layer sharp"><img src="https://static.wixstatic.com/media/2642c9_cc4a630f04864ce697a072eaf03473cc~mv2.jpg/v1/fill/w_1600,h_1240,q_85/espelhos.jpg" alt="Composição de espelhos hexagonais instalada pela Bom Pastor"></div>
+  <div class="layer fog" id="fog"><img src="https://static.wixstatic.com/media/2642c9_cc4a630f04864ce697a072eaf03473cc~mv2.jpg/v1/fill/w_800,h_620,q_60/espelhos-blur.jpg" alt=""></div>
+  <svg class="seal" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="c" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text><textPath href="#c">desde 1992 · xaxim · curitiba · </textPath></text><circle cx="60" cy="60" r="20" fill="none" stroke="#9fd8ff" stroke-width="1.2"/><path d="M60 44v32M44 60h32" stroke="#9fd8ff" stroke-width="1.2"/></svg>
+  <span class="hint">Passe o mouse e desembace o vidro</span>
+  <div class="wrap hero-content">
+    <h1><span class="ln"><span>Vidro que</span></span><span class="ln"><span><span class="it">transforma</span></span></span><span class="ln"><span>o seu espaço.</span></span></h1>
+    <div class="hero-row">
+      <p class="lead">Box, guarda-corpos, coberturas, sacadas, espelhos e esquadrias de alumínio, sob medida, desenhados e instalados por uma vidraçaria de Curitiba com mais de 30 anos de história.</p>
+      <div class="hero-cta">
+        <a href="#simulador" class="btn btn-ice shine">Monte seu box <span>→</span></a>
+        <a class="btn btn-glass wa" data-msg="Olá! Vim pelo site da Bom Pastor e quero um orçamento." href="#">Falar no WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="t">
+  <span>Box para banheiro</span><span>sob medida</span><span>Guarda-corpo</span><span>desde 1992</span><span>Coberturas</span><span>feito em Curitiba</span><span>Sacadas</span><span>acabamento impecável</span><span>Espelhos</span><span>esquadrias de alumínio</span>
+  <span>Box para banheiro</span><span>sob medida</span><span>Guarda-corpo</span><span>desde 1992</span><span>Coberturas</span><span>feito em Curitiba</span><span>Sacadas</span><span>acabamento impecável</span><span>Espelhos</span><span>esquadrias de alumínio</span>
+</div></div>
+
+<!-- MANIFESTO -->
+<section class="manifesto">
+  <div class="wrap">
+    <span class="label rv"><i></i>Bom Pastor</span>
+    <p class="big rv" style="margin-top:26px">Há mais de três décadas, a gente transforma <span class="it">luz</span> em espaço. <span class="dim">Cada vidro sai na medida exata da sua casa, do seu comércio, da sua obra, e é instalado por quem entende do assunto desde 1992.</span></p>
+    <div class="nums rv">
+      <div class="num"><b data-count="1992" data-plain>1992</b><span>ano em que abrimos as portas</span></div>
+      <div class="num"><b><span data-count="30">30</span><sup>+</sup></b><span>anos no mesmo bairro</span></div>
+      <div class="num"><b><span data-count="4.5" data-dec>4,5</span><sup>★</sup></b><span>nota média no Google</span></div>
+      <div class="num"><b data-count="137">137</b><span>avaliações de clientes</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-top">
+      <div class="rv"><span class="label"><i></i>O que fazemos</span><h2 style="margin-top:18px">Soluções em <span class="it">vidro</span><br>e alumínio</h2></div>
+      <p class="lead rv">Do banheiro à fachada. Toque num serviço para pedir o orçamento com a mensagem pronta.</p>
+    </div>
+    <div class="bento">
+      <a class="tile t1 wa rv" data-msg="Olá! Vim pelo site e quero orçamento de guarda-corpo/corrimão." href="#">
+        <img loading="lazy" src="https://static.wixstatic.com/media/2642c9_35b0ce09f65a48ef9dab68b2c9ce637e~mv2.jpg/v1/fill/w_900,h_675,q_85/guarda-corpo.jpg" alt="Escada com guarda-corpo de vidro">
+        <span class="n">01</span><span class="go">↗</span>
+        <div class="in"><h3>Guarda-corpo<br>e corrimão</h3><p>Segurança em escadas, sacadas e mezaninos, sem perder a vista. Vidro com corrimão em alumínio ou inox.</p></div>
+      </a>
+      <a class="tile t2 wa rv" data-msg="Olá! Vim pelo site e quero orçamento de espelhos." href="#">
+        <img loading="lazy" src="https://static.wixstatic.com/media/2642c9_b2ee1720a0d14908b5f7f44a94b39136~mv2.jpg/v1/fill/w_600,h_800,q_85/espelhos.jpg" alt="Painel de espelhos sob medida">
+        <span class="n">02</span><span class="go">↗</span>
+        <div class="in"><h3>Espelhos</h3><p>Painéis, hexágonos e paredes inteiras, cortados sob medida.</p></div>
+      </a>
+      <a class="tile t3 wa rv" data-msg="Olá! Vim pelo site e quero orçamento de cobertura em vidro." href="#">
+        <img loading="lazy" src="https://static.wixstatic.com/media/2642c9_890152cca7004dab8981cb6f7b925e31~mv2.jpg/v1/fill/w_600,h_420,q_85/cobertura.jpg" alt="Cobertura em vidro">
+        <span class="n">03</span><span class="go">↗</span>
+        <div class="in"><h3>Coberturas</h3><p>Proteção da chuva com a luz natural entrando.</p></div>
+      </a>
+      <a class="tile t4 wa rv" data-msg="Olá! Vim pelo site e quero orçamento de fechamento de sacada." href="#">
+        <img loading="lazy" src="https://static.wixstatic.com/media/2642c9_8852b4e6cb8d4d2598183a19e0059570~mv2.jpg/v1/fill/w_600,h_420,q_85/sacada.jpg" alt="Fechamento de varanda em vidro">
+        <span class="n">04</span><span class="go">↗</span>
+        <div class="in"><h3>Sacadas</h3><p>Use a varanda o ano inteiro, com a vista preservada.</p></div>
+      </a>
+      <a class="tile t5 wa rv" data-msg="Olá! Vim pelo site e quero orçamento de janelas/portas de alumínio." href="#">
+        <img loading="lazy" src="https://static.wixstatic.com/media/2642c9_c8d44dce9b6c4285844a68f70abc1437~mv2.jpg/v1/fill/w_591,h_420,q_85/esquadrias.jpg" alt="Residência com esquadrias">
+        <span class="n">05</span><span class="go">↗</span>
+        <div class="in"><h3>Esquadrias</h3><p>Janelas e portas de alumínio na medida do vão.</p></div>
+      </a>
+      <div class="tile glassy t6 rv" style="cursor:default">
+        <div class="in t6in">
+          <div><span class="n" style="position:static">06</span><h3 style="margin-top:10px">E também</h3></div>
+          <ul><li>Box para banheiro</li><li>Portas de vidro</li><li>Divisórias e fachadas</li><li>Vidro temperado</li><li>Troca de vidro quebrado</li><li>Manutenção de esquadrias</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIMULADOR DE BOX -->
+<section class="config" id="simulador">
+  <div class="wrap cfg">
+    <div class="stage rv"><span class="tag" id="cfgTag">Seu box: <b>de correr</b></span><div id="boxSvg"></div></div>
+    <div class="opts rv">
+      <span class="label"><i></i>Simulador</span>
+      <h2 style="margin-top:18px">Monte o <span class="it">seu</span> box</h2>
+      <p class="lead" style="margin-top:14px">Escolha o modelo, o vidro e a cor das ferragens. Quando gostar, mande para nós e devolvemos o orçamento.</p>
+      <div class="grp"><h4>Modelo</h4><div class="pills" data-k="modelo">
+        <button class="on" data-v="de correr">De correr</button><button data-v="de abrir">De abrir</button><button data-v="até o teto">Até o teto</button></div></div>
+      <div class="grp"><h4>Vidro</h4><div class="pills" data-k="vidro">
+        <button class="on" data-v="incolor"><span class="dot" style="background:#cfe9f5"></span>Incolor</button>
+        <button data-v="fumê"><span class="dot" style="background:#4a4f5a"></span>Fumê</button>
+        <button data-v="bronze"><span class="dot" style="background:#8a6440"></span>Bronze</button>
+        <button data-v="jateado"><span class="dot" style="background:#eef2f6"></span>Jateado</button></div></div>
+      <div class="grp"><h4>Ferragens</h4><div class="pills" data-k="ferragem">
+        <button class="on" data-v="cromado"><span class="dot" style="background:linear-gradient(135deg,#f3f5f8,#9aa3ae)"></span>Cromado</button>
+        <button data-v="preto fosco"><span class="dot" style="background:#151618"></span>Preto fosco</button>
+        <button data-v="dourado"><span class="dot" style="background:linear-gradient(135deg,#f3d58a,#b8892f)"></span>Dourado</button>
+        <button data-v="branco"><span class="dot" style="background:#fafafa"></span>Branco</button></div></div>
+      <div class="cfg-cta">
+        <a class="btn btn-wa shine" id="cfgSend" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.5.2-.7.2-1.3.2-1.5-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.6 2.2 13.8 2.2 12 2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8z"/></svg>Quero este box</a>
+        <small>Ilustração para referência. As medidas e opções finais são confirmadas no orçamento.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OBRAS -->
+<section id="obras">
+  <div class="wrap works-head">
+    <div class="rv"><span class="label"><i></i>Obras entregues</span><h2 style="margin-top:18px">Feito pela <span class="it">nossa</span> equipe</h2></div>
+    <div class="ctrl rv"><button id="rPrev" aria-label="Anterior">←</button><span class="count" id="rCount">01 / 10</span><button id="rNext" aria-label="Próxima">→</button></div>
+  </div>
+  <div class="reel" id="reel"></div>
+</section>
+
+<!-- HISTÓRIA -->
+<section id="historia" style="padding-top:0">
+  <div class="wrap story">
+    <div class="story-ph rv"><img loading="lazy" src="https://static.wixstatic.com/media/2642c9_91a06f7045c447e3ac22c2af2b8588af~mv2.jpg/v1/fill/w_900,h_1035,q_80/loja.jpg" alt="Fachada da loja Bom Pastor no Xaxim"><div class="yr"><b>1992</b><span>Rua Primeiro de Maio, 814</span></div></div>
+    <div class="rv">
+      <span class="label"><i></i>Nossa história</span>
+      <h2 style="margin-top:18px">Uma loja de <span class="it">bairro</span> que atende Curitiba inteira</h2>
+      <p>A Bom Pastor abriu as portas em 1992, no Xaxim. Desde então, o que nos diferencia é personalizar cada trabalho à necessidade do cliente, com uma equipe experiente do orçamento à instalação.</p>
+      <div class="timeline">
+        <div><b>1992</b><span>Abertura da loja na Rua Primeiro de Maio, no Xaxim.</span></div>
+        <div><b>Vidro + alumínio</b><span>Vidraçaria e esquadrias no mesmo lugar: um só fornecedor para a obra.</span></div>
+        <div><b>Hoje</b><span>Mais de 30 anos e nota 4,5 no Google, com 137 avaliações.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVALIAÇÃO -->
+<div class="rate">
+  <div class="wrap">
+    <div class="rate-card rv">
+      <div class="big">4,5</div>
+      <div><div class="stars">★★★★<span class="half">★</span></div><h3>137 clientes avaliaram</h3><p>Leia no Google o que dizem sobre o nosso atendimento e os nossos trabalhos.</p></div>
+      <a class="btn btn-glass" target="_blank" rel="noopener" href="https://www.google.com/maps/search/Vidra%C3%A7aria+e+Esquadrias+Bom+Pastor+Rua+Primeiro+de+Maio+814+Curitiba">Ver avaliações ↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- ORÇAMENTO -->
+<section id="orcamento" style="padding-top:0">
+  <div class="wrap quiz-wrap">
+    <div class="rv">
+      <span class="label"><i></i>Orçamento</span>
+      <h2 style="margin-top:18px">Seu orçamento em <span class="it">3 toques</span></h2>
+      <p class="lead" style="margin-top:16px">Responda três perguntas e a mensagem chega pronta no nosso WhatsApp. Sem compromisso.</p>
+      <div class="contacts">
+        <a class="wa" data-msg="Olá! Vim pelo site da Bom Pastor." href="#"><span>WhatsApp</span><b>(41) 99623-3986</b></a>
+        <a href="tel:+554133468383"><span>Telefone</span><b>(41) 3346-8383</b></a>
+        <a href="tel:+554130193220"><span>Telefone</span><b>(41) 3019-3220</b></a>
+        <a href="mailto:bompastorvidracaria5@gmail.com"><span>E-mail</span><b>bompastorvidracaria5@gmail.com</b></a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Rua+Primeiro+de+Maio+814+Xaxim+Curitiba+PR" target="_blank" rel="noopener"><span>Loja</span><b>R. Primeiro de Maio, 814 · Xaxim ↗</b></a>
+        <a href="https://www.instagram.com/vidracaria_bom_pastor/" target="_blank" rel="noopener"><span>Instagram</span><b>@vidracaria_bom_pastor ↗</b></a>
+      </div>
+    </div>
+    <div class="quiz rv" id="quiz">
+      <div class="q-progress"><i class="on"></i><i></i><i></i><i></i></div>
+      <div class="q-step on" data-step="0">
+        <h3>O que você precisa?</h3><p class="s">Escolha uma opção.</p>
+        <div class="choices" data-k="servico">
+          <button>Box para banheiro</button><button>Guarda-corpo / corrimão</button><button>Cobertura em vidro</button><button>Fechamento de sacada</button><button>Espelho</button><button>Janelas / portas de alumínio</button><button>Vidro temperado / porta de vidro</button><button>Troca de vidro / manutenção</button>
+        </div>
+      </div>
+      <div class="q-step" data-step="1">
+        <h3>Onde vai ser instalado?</h3><p class="s">Isso ajuda a indicar o vidro certo.</p>
+        <div class="choices" data-k="local"><button>Casa</button><button>Apartamento</button><button>Comércio</button><button>Obra nova</button></div>
+      </div>
+      <div class="q-step" data-step="2">
+        <h3>Quase lá</h3><p class="s">Diga seu nome e o bairro. As medidas são opcionais.</p>
+        <input id="qNome" placeholder="Seu nome" autocomplete="name">
+        <input id="qBairro" placeholder="Bairro / cidade">
+        <textarea id="qObs" rows="3" placeholder="Medidas ou detalhes (opcional)"></textarea>
+      </div>
+      <div class="q-step" data-step="3">
+        <h3>Tudo pronto ✓</h3><p class="s">Confira a mensagem. Na conversa, você pode mandar fotos do espaço.</p>
+        <div class="summary" id="qSum"></div>
+        <a class="btn btn-wa shine" id="qSend" href="#" target="_blank" rel="noopener" style="justify-content:center">Enviar pelo WhatsApp</a>
+      </div>
+      <div class="q-nav"><button class="q-back" id="qBack" style="visibility:hidden">← Voltar</button><button class="btn btn-ice" id="qNext" style="display:none">Continuar →</button></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <svg class="giant" viewBox="0 0 1000 160" aria-label="Bom Pastor"><defs><linearGradient id="gg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef2f8" stop-opacity=".9"/><stop offset="1" stop-color="#eef2f8" stop-opacity=".04"/></linearGradient></defs><text x="0" y="150" textLength="1000" lengthAdjust="spacingAndGlyphs" fill="url(#gg)">BOM PASTOR</text></svg>
+    <div class="foot"><span>Vidraçaria e Esquadrias Bom Pastor · Rua Primeiro de Maio, 814 · Xaxim, Curitiba - PR · desde 1992</span><span>Site por <a class="dev" href="https://hrdev.com.br/" target="_blank" rel="noopener">HR | DEV</a><span class="proto">Protótipo</span></span></div>
+  </div>
+</footer>
+
+<a class="wa-fab wa" data-msg="Olá! Vim pelo site da Bom Pastor e quero um orçamento." href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#04210f"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.5.2-.7.2-1.3.2-1.5-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.6 2.2 13.8 2.2 12 2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8z"/></svg></a>
+
+<div class="lb" id="lb"><button class="x" aria-label="Fechar">✕</button><button class="p" aria-label="Anterior">←</button><img id="lbi" alt=""><button class="n" aria-label="Próxima">→</button></div>
+
+<script>
+const WA="5541996233986", wa=m=>"https://wa.me/"+WA+"?text="+encodeURIComponent(m);
+document.querySelectorAll(".wa").forEach(a=>{a.href=wa(a.dataset.msg||"Olá!");a.target="_blank";a.rel="noopener";});
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// intro
+window.addEventListener("load",()=>{setTimeout(()=>{document.getElementById("intro").classList.add("go");document.body.classList.add("ready");},reduce?0:1100);});
+setTimeout(()=>{document.getElementById("intro").classList.add("go");document.body.classList.add("ready");},3500);
+
+// menu
+const menu=document.getElementById("menu");document.getElementById("burger").onclick=()=>menu.classList.toggle("open");
+menu.querySelectorAll("a").forEach(a=>a.onclick=()=>menu.classList.remove("open"));
+
+// HERO: desembaçar o vidro
+const hero=document.getElementById("hero"),fog=document.getElementById("fog");
+let tx=70,ty=45,cx=70,cy=45,active=false,t0=performance.now();
+hero.addEventListener("pointermove",e=>{const r=hero.getBoundingClientRect();tx=(e.clientX-r.left)/r.width*100;ty=(e.clientY-r.top)/r.height*100;active=true;});
+hero.addEventListener("pointerleave",()=>active=false);
+(function loop(t){
+  if(!active){const k=(t-t0)/1000;tx=62+18*Math.cos(k*.5);ty=42+14*Math.sin(k*.7);}
+  cx+=(tx-cx)*.08;cy+=(ty-cy)*.08;
+  fog.style.setProperty("--x",cx+"%");fog.style.setProperty("--y",cy+"%");
+  if(!reduce)requestAnimationFrame(loop);
+})(performance.now());
+const setR=()=>{const s=Math.min(innerWidth,innerHeight);fog.style.setProperty("--r1",s*.14+"px");fog.style.setProperty("--r2",s*.32+"px");};setR();addEventListener("resize",setR);
+
+// revelar ao rolar + contadores
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(!en.isIntersecting)return;en.target.classList.add("in");
+  en.target.querySelectorAll("[data-count]").forEach(el=>{if(el.dataset.done)return;el.dataset.done=1;const end=+el.dataset.count,dec="dec" in el.dataset,plain="plain" in el.dataset,st=plain?1960:0;const d=1600,s0=performance.now();
+    (function f(t){const p=Math.min(1,(t-s0)/d),e=1-Math.pow(1-p,3),v=st+(end-st)*e;el.textContent=dec?v.toFixed(1).replace(".",","):Math.round(v);if(p<1)requestAnimationFrame(f);})(s0);});
+  io.unobserve(en.target);}),{threshold:.15});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+
+// SIMULADOR
+const cfg={modelo:"de correr",vidro:"incolor",ferragem:"cromado"};
+const GL={"incolor":["#bfe3f2",.30],"fumê":["#3c414b",.62],"bronze":["#8a6440",.52],"jateado":["#eef2f6",.86]};
+const FE={"cromado":["#e9edf2","#8f98a4"],"preto fosco":["#2a2c30","#111214"],"dourado":["#f1d388","#b0832c"],"branco":["#ffffff","#d9dde3"]};
+function boxSVG(){
+  const [gc,go]=GL[cfg.vidro],[f1,f2]=FE[cfg.ferragem],top=cfg.modelo==="até o teto"?18:70;
+  const glass=(x,y,w,h)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${gc}" fill-opacity="${go}" stroke="url(#fe)" stroke-width="3"/><path d="M${x+14} ${y+18} l40 -0 M${x+14} ${y+30} l22 0" stroke="#fff" stroke-opacity=".35" stroke-width="3" stroke-linecap="round"/><polygon points="${x+w*.55},${y} ${x+w*.75},${y} ${x+w*.25},${y+h} ${x+w*.05},${y+h}" fill="#fff" opacity=".07"/>`;
+  let b="";
+  if(cfg.modelo==="de abrir"){
+    b+=glass(60,top,120,370-top)+glass(182,top,118,370-top);
+    b+=`<rect x="186" y="${top+40}" width="6" height="16" rx="2" fill="url(#fe)"/><rect x="186" y="${330}" width="6" height="16" rx="2" fill="url(#fe)"/>`;
+    b+=`<rect x="284" y="${(top+370)/2-40}" width="7" height="80" rx="3.5" fill="url(#fe)"/>`;
+  }else{
+    b+=`<rect x="54" y="${top-10}" width="252" height="10" rx="3" fill="url(#fe)"/>`;
+    b+=glass(60,top,128,370-top)+glass(172,top+6,128,364-top);
+    b+=`<circle cx="100" cy="${top-5}" r="3" fill="${f2}"/><circle cx="252" cy="${top-5}" r="3" fill="${f2}"/>`;
+    b+=`<rect x="180" y="${(top+370)/2-45}" width="7" height="90" rx="3.5" fill="url(#fe)"/>`;
+  }
+  return `<svg viewBox="0 0 360 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustração do box escolhido">
+  <defs><linearGradient id="fe" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="${f1}"/><stop offset="1" stop-color="${f2}"/></linearGradient>
+  <pattern id="tile" width="30" height="30" patternUnits="userSpaceOnUse"><rect width="30" height="30" fill="#e7e2da"/><path d="M30 0H0V30" fill="none" stroke="#d6d0c6" stroke-width="1"/></pattern>
+  <linearGradient id="fl" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#b7b0a5"/><stop offset="1" stop-color="#8f897f"/></linearGradient></defs>
+  <rect x="20" y="10" width="320" height="362" fill="url(#tile)" rx="4"/>
+  <rect x="20" y="370" width="320" height="40" fill="url(#fl)" rx="4"/>
+  <path d="M120 70 v18 q0 10 10 10 h22" stroke="#9aa3ae" stroke-width="5" fill="none" stroke-linecap="round"/><ellipse cx="160" cy="100" rx="16" ry="5" fill="#8f98a4"/>
+  <g opacity=".6">${[0,1,2,3,4,5].map(i=>`<line x1="${150+i*4}" y1="108" x2="${146+i*5}" y2="${200+i*6}" stroke="#bfe3f2" stroke-width="1.5" stroke-dasharray="4 10"/>`).join("")}</g>
+  <rect x="236" y="190" width="40" height="10" rx="3" fill="#cfc8bd"/>
+  ${b}
+  <rect x="54" y="366" width="252" height="6" rx="2" fill="url(#fe)"/>
+  </svg>`;
+}
+function renderBox(){
+  document.getElementById("boxSvg").innerHTML=boxSVG();
+  document.getElementById("cfgTag").innerHTML=`Seu box: <b>${cfg.modelo}</b> · ${cfg.vidro} · ${cfg.ferragem}`;
+  document.getElementById("cfgSend").href=wa(`Olá! Montei um box no site da Bom Pastor e gostaria de um orçamento:\n\n• Modelo: ${cfg.modelo}\n• Vidro: ${cfg.vidro}\n• Ferragens: ${cfg.ferragem}`);
+}
+document.querySelectorAll(".pills").forEach(g=>g.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;g.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x===b));cfg[g.dataset.k]=b.dataset.v;renderBox();}));
+renderBox();
+
+// OBRAS
+const M="https://static.wixstatic.com/media/";
+const OB=[["2642c9_6600463b91c9424d973d4caca2ba7036","Guarda-corpo","Escada interna"],["2642c9_890152cca7004dab8981cb6f7b925e31","Cobertura","Vista para a cidade"],["2642c9_4001e4c0e3b34e9bbef12c145fa35198","Espelhos","Hexágonos decorativos"],["2642c9_ac7a6792020647139ce3195c7041bd4c","Guarda-corpo","Escada externa"],["2642c9_148179d6aa874a6cb52585dbcd2dd161","Cobertura","Área externa com deck"],["2642c9_3ea1ad74f81a4211aeb20daa675cc3ba","Espelhos","Parede inteira"],["2642c9_f3547ba3d8af497d901cefaa4d8b4515","Guarda-corpo","Sacada com vidro verde"],["2642c9_8852b4e6cb8d4d2598183a19e0059570","Sacada","Fechamento de varanda"],["2642c9_73451c7969e04210bcd79871d8ee2fc5","Guarda-corpo","Área externa"],["2642c9_5bf257ee2f22455fa7279fd32628e79d","Guarda-corpo","Varanda de casa térrea"]];
+const reel=document.getElementById("reel");
+OB.forEach((o,i)=>{const f=document.createElement("figure");f.dataset.i=i;f.innerHTML=`<img loading="lazy" draggable="false" src="${M}${o[0]}~mv2.jpg/v1/fill/w_640,h_800,q_80/obra.jpg" alt="${o[1]}: ${o[2]}"><figcaption><span>${o[2]}</span><em>${o[1]}</em></figcaption>`;reel.appendChild(f);});
+const figs=[...reel.children],cnt=document.getElementById("rCount");
+const curIdx=()=>{const c=reel.scrollLeft+reel.clientWidth/2;let best=0,bd=1e9;figs.forEach((f,i)=>{const d=Math.abs(f.offsetLeft+f.offsetWidth/2-c);if(d<bd){bd=d;best=i}});return best;};
+const goTo=i=>{i=(i+figs.length)%figs.length;const f=figs[i];reel.scrollTo({left:f.offsetLeft-(reel.clientWidth-f.offsetWidth)/2,behavior:"smooth"});};
+reel.addEventListener("scroll",()=>{cnt.textContent=String(curIdx()+1).padStart(2,"0")+" / "+String(figs.length).padStart(2,"0");},{passive:true});
+document.getElementById("rPrev").onclick=()=>goTo(curIdx()-1);document.getElementById("rNext").onclick=()=>goTo(curIdx()+1);
+let drag=null;reel.addEventListener("pointerdown",e=>{if(e.pointerType!=="mouse")return;drag={x:e.clientX,s:reel.scrollLeft,m:false};reel.style.scrollSnapType="none";});
+addEventListener("pointermove",e=>{if(!drag)return;const dx=e.clientX-drag.x;if(Math.abs(dx)>5)drag.m=true;reel.scrollLeft=drag.s-dx;});
+addEventListener("pointerup",()=>{if(!drag)return;reel.style.scrollSnapType="";const moved=drag.m;drag=null;if(moved){reel.dataset.moved=1;setTimeout(()=>delete reel.dataset.moved,50);goTo(curIdx());}});
+const lb=document.getElementById("lb"),lbi=document.getElementById("lbi");let li=0;
+const show=i=>{li=(i+OB.length)%OB.length;lbi.src=`${M}${OB[li][0]}~mv2.jpg/v1/fit/w_1400,h_1000,q_85/obra.jpg`;lbi.alt=OB[li][1]+": "+OB[li][2];lb.classList.add("on");};
+reel.addEventListener("click",e=>{if(reel.dataset.moved)return;const f=e.target.closest("figure");if(f)show(+f.dataset.i);});
+lb.querySelector(".x").onclick=()=>lb.classList.remove("on");lb.querySelector(".p").onclick=()=>show(li-1);lb.querySelector(".n").onclick=()=>show(li+1);
+lb.onclick=e=>{if(e.target===lb)lb.classList.remove("on");};
+addEventListener("keydown",e=>{if(!lb.classList.contains("on"))return;if(e.key==="Escape")lb.classList.remove("on");if(e.key==="ArrowRight")show(li+1);if(e.key==="ArrowLeft")show(li-1);});
+
+// QUIZ
+const Q={servico:"",local:""};let step=0;
+const steps=[...document.querySelectorAll(".q-step")],bars=[...document.querySelectorAll(".q-progress i")],back=document.getElementById("qBack"),next=document.getElementById("qNext");
+function go(s){step=s;steps.forEach((el,i)=>el.classList.toggle("on",i===s));bars.forEach((b,i)=>b.classList.toggle("on",i<=s));back.style.visibility=s>0?"visible":"hidden";next.style.display=s===2?"inline-flex":"none";
+  if(s===3){const n=document.getElementById("qNome").value.trim(),b=document.getElementById("qBairro").value.trim(),o=document.getElementById("qObs").value.trim();
+    let m=`Olá! ${n?"Sou "+n+" e ":""}vim pelo site da Bom Pastor.\nGostaria de um orçamento:\n\n• Serviço: ${Q.servico}\n• Local: ${Q.local}`;if(b)m+=`\n• Bairro: ${b}`;if(o)m+=`\n• Detalhes: ${o}`;
+    document.getElementById("qSum").textContent=m;document.getElementById("qSend").href=wa(m);}
+  if(s===2)setTimeout(()=>document.getElementById("qNome").focus({preventScroll:true}),50);}
+document.querySelectorAll(".choices").forEach(g=>g.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;g.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x===b));Q[g.dataset.k]=b.textContent;setTimeout(()=>go(step+1),220);}));
+back.onclick=()=>go(Math.max(0,step-1));next.onclick=()=>go(3);
+</script>
+</body>
+</html>
